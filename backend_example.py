@@ -28,10 +28,13 @@ def get_response(query):
             response_data = json.loads(decoded)
             agent_return = response_data["response"]
             node_name = response_data["current_node"]
-            print(f"Node: {node_name}, Response: {agent_return['response']}")
+            try:
+                print(f"Node: {node_name}, Response: {agent_return['response']}")
+            except:
+                print(f"Node: {node_name}, Response: {agent_return}")
 
 
 # Example usage
 if __name__ == "__main__":
-    query = "What is the weather like today in New York?"
+    query = "今日海口天气如何?"
     get_response(query)

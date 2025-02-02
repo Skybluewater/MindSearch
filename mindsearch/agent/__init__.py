@@ -1,6 +1,11 @@
 import os
 from copy import deepcopy
 from datetime import datetime
+from dotenv import load_dotenv
+
+ENV_FILE_PATH = os.path.join(os.getcwd(), ".env")
+load_dotenv(ENV_FILE_PATH)
+print(os.getenv("WEB_SEARCH_API_KEY"))
 
 from lagent.actions import AsyncWebBrowser, WebBrowser
 from lagent.agents.stream import get_plugin_prompt

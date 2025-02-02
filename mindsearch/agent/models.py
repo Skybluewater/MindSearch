@@ -1,6 +1,10 @@
 import os
 
 from dotenv import load_dotenv
+ENV_FILE_PATH = os.path.join(os.getcwd(), ".env")
+load_dotenv(ENV_FILE_PATH)
+print(os.getenv("SILICON_API_KEY"))
+
 from lagent.llms import (
     GPTAPI,
     INTERNLM2_META,
